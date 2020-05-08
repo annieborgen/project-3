@@ -10,44 +10,76 @@ console.log(arrOf1To100);
 
 let bitBatBotOrNot = (n) => {
    //your code goes here
-   let result = "";
-   if (n % 3 == 0){
-     result = `${result}Bit`;
-   }
-   if (n % 5 == 0){
-     result = `${result}Bat`;
-   }
-
-   return result;
+let result = "";
+  if (n % 3 == 0){
+    result = `${result}Bit`;
+  }
+  if (n % 5 == 0){
+    result = `${result}Bat`;
+  }
+  if (n % 7 == 0){
+    result = `${result}Bot`;
+ }
+ if (n % 3 !=0 && n % 5 !=0 && n % 7 != 0 ){
+   result =`${result}Not`;
+ }
+  return result;
 };
 
 let findAllbitBatBotOrNots1 = (arr) => {
    //your code goes here
    //use map method
+   return arr.map(each =>`${each}:`+ bitBatOrNot(each));
 };
 
 let findAllbitBatBotOrNots2 = (arr) => {
    //your code goes here
-   //use for statement
+   // use for statement
+   let result = [];
+   for(each in arr){
+     result.push(arr[each]+ ":" + bitBatBotOrNot(arr[each]));
+   }
+   return result;
 };
 
 let findAllbitBatBotOrNots3 = (arr) => {
    //your code goes here
    //use for..of statement
+   let result = [];
+   for(each of arr){
+     result.push(each + ":" + bitBatOrNot(each));
+   }
+   return result;
 };
-
+/*
 let findAllbitBatBotOrNots4 = (arr) => {
    //your code goes here
    //use forEach method
+   let result = [];
+   arr.forEach arr {
+     result.push(arr.forEach)+ ":" + bitBatBotOrNot(arr[each]));
+   }
+   return result;
 };
 
+*/
+let findAllbitBatBotOrNotXC = (arr) => {
+   //your code goes here
+   // use for statement
+   let result = [];
+   for(each in arr){
+     result.push(arr[each]+ ":" + bitBatBotOrNot(arr[each]));
+   }
+   return result;
+ };
 //test the functions
 
-findAllbitBatBotOrNots1(arrOf1To100);
+//console.log(findAllbitBatBotOrNots1(arrOf1To100));
 
-findAllbitBatBotOrNots2(arrOf1To100);
+//console.log(findAllbitBatBotOrNots2(arrOf1To100));
 
-findAllbitBatBotOrNots3(arrOf1To100);
+//console.log(findAllbitBatBotOrNots3(arrOf1To100));
 
-findAllbitBatBotOrNots4(arrOf1To100);
-};
+//console.log(findAllbitBatBotOrNots4(arrOf1To100));
+
+//console.log(findAllbitBatBotOrNotsXC(arrOf1To100));
